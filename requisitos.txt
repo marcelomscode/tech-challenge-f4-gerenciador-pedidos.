@@ -1,0 +1,30 @@
+Microsserviço de Logística de Entrega:
+
+Descrição Funcional: este serviço cuidará de toda a logística
+relacionada à entrega de pedidos, desde a atribuição de entregadores até o
+rastreamento das entregas em tempo real. A função inclui calcular as rotas mais
+eficientes, estimar tempos de entrega e fornecer atualizações de status aos
+clientes.
+
+Tecnologias e Abordagens:
+•Spring Boot para a base do microsserviço.
+•Spring Data JPA para persistência de dados.
+
+- Considerar que os pedidos são recebidos já no centro de distribuição, e que serão despachados a partir de lá.
+
+- verificar pedidos para serem processados
+    - Pedidos que devem ser despachados no dia
+    - receber via evento os pedidos com dados de entrega e gravar na base ?
+
+- despachar pedidos
+    - verificar pedidos por cep/região
+    - atribuir entregador
+    - calcular rota
+    - estimar tempo de entrega
+    - atualizar status do pedido ( Em preparação, Em trânsito, Entregue )
+    - enviar notificação para o cliente ( Via email logistica@mscode.com.br)
+
+- rastrear entregas
+    - Serviço para rastrear em tempo real a entrega de pedidos
+    - Usar a API Rota do Google Directions API para calcular a rota e estimativa de tempo de entrega.
+    - Para saber o tempo de entrega, passar cep inicial e final, e tempo de saida ( departure_time ).
