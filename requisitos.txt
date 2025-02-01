@@ -13,8 +13,10 @@ Tecnologias e Abordagens:
 - Considerar que os pedidos são recebidos já no centro de distribuição, e que serão despachados a partir de lá.
 
 - verificar pedidos para serem processados
-    - Pedidos que devem ser despachados no dia
-    - receber via evento os pedidos com dados de entrega e gravar na base ?
+    - Receber via evento os pedidos com dados de entrega e gravar na base
+        - Ao salvar na base colocar o pedido com status "Pedido Recebido"
+    - Criar uma batch que busca pedidos na base que devem ser despachados no dia.
+        - Ao busca os pedidos atualizar o status para "Em Preparação"
 
 - despachar pedidos
     - verificar pedidos por cep/região
